@@ -1,0 +1,51 @@
+body {
+  margin: 0px;
+  background-color: rgb(37, 33, 33);
+  font-family: 'Nunito', sans-serif;
+  font-size: 30px;
+}
+
+button {
+  width: 200px;
+  height: 400px;
+  margin: 5px;
+  font-family: 'Nunito', sans-serif; 
+  font-size: 30px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+p {
+  background-color: rgb(219, 139, 47);
+  padding: 10px;
+  margin: 0px;
+  font-weight: 600;
+}
+
+img {
+  width: 150px;
+  height: 350px;
+  object-fit: cover;
+  margin: 0px;
+}
+
+.divResult {
+  width: 650px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgResult {
+  width: 90%;
+  object-fit: contain;
+  border-width: 1px;
+  box-shadow: 5px 5px 5px;
+  background-color: white;
+}
+
+.butAIChoose {
+  width: 637px;
+}
