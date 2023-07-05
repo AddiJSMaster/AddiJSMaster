@@ -84,15 +84,15 @@
 
     <!--BUTTONS----------------------------------------------->
     <button onclick="vMyChoisse=vRock; fun_AIChoose();">
-      <img src="/images/jpgRock.jpg">
+      <img src="images/jpgRock.jpg">
     </button>
     <!-------------------------------------------------------->
     <button onclick="vMyChoisse=vPaper; fun_AIChoose();">
-      <img src="/images/jpgPaper.jpg">
+      <img src="images/jpgPaper.jpg">
     </button>
     <!--------------------------------------------------------> 
     <button onclick="vMyChoisse=vScissors; fun_AIChoose();">
-      <img src="/images/jpgScissors.jpg">
+      <img src="images/jpgScissors.jpg">
     </button>
     <!--------------------------------------------------------> 
     <div class="divResult">
@@ -115,28 +115,28 @@
           // AI Wählt...
           if (vAIChoose === vPaper) {
 
-            elmButton.innerHTML = '<img src="/images/jpgPaper.jpg">';
+            elmButton.innerHTML = '<img src="images/jpgPaper.jpg">';
           } else if (vAIChoose === vScissors) {
 
-            elmButton.innerHTML = '<img src="/images/jpgScissors.jpg">';
+            elmButton.innerHTML = '<img src="images/jpgScissors.jpg">';
           } else {
 
-            elmButton.innerHTML = '<img src="/images/jpgRock.jpg">';
+            elmButton.innerHTML = '<img src="images/jpgRock.jpg">';
           }
 
           document.querySelector('.pPoints').innerHTML = `----- ${oPoints.vPoints} Punkte -----`;
 
           if (vResult === vWin) {
 
-            elmResult.innerHTML = '<img class="imgResult" src="/images/pngWin.png">';
+            elmResult.innerHTML = '<img class="imgResult" src="images/pngWin.png">';
 
           } else if (vResult === vLose) {
 
-            elmResult.innerHTML = '<img class="imgResult" src="/images/pngLose.png">';
+            elmResult.innerHTML = '<img class="imgResult" src="images/pngLose.png">';
 
           } else {
 
-            elmResult.innerHTML = '<img class="imgResult" src="/images/pngTie.png">';
+            elmResult.innerHTML = '<img class="imgResult" src="images/pngTie.png">';
           }
         }
         // Funktion - Computer wählt aus //
