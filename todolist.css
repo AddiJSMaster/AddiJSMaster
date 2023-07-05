@@ -1,0 +1,43 @@
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: rgb(30, 30, 30);
+  color: whitesmoke;
+  margin: 0;
+}
+
+button {
+  margin: 5px 10px;
+}
+
+p {
+  margin: 0;
+  padding: 20px 20px;
+}
+
+.parTitle{
+  font-weight: 600;
+  color: rgb(30, 30, 30);
+  background-color: rgb(220, 140, 50);
+  box-shadow: 0px 3px 5px rgba(130, 130, 130, 0.5);
+  margin-bottom: 20px;
+}
+
+.inpToDoText{
+  
+  height: 30px;
+  width: 500px;
+  border: 0px solid white;
+  border-radius: 20px;
+  margin-left: 20px;
+  padding: 5px;
+  padding-left: 20px;
+}
+
+.butAdd{
+
+  width: 30px;
+  height: 30px;
+  border: 0px solid white;
+  border-radius: 10px;
+}
