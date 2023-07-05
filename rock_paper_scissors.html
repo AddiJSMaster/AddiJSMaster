@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <!-------------------------------------------------------->
+  <head>
+    <meta charset="UTF-8">
+    <title>Schere - Stein - Papier</title>
 
+    <style>
+
+      body {
+
+        margin: 0px;
+      }
+
+      button {
+
+        width: 200px;
+        height: 400px;
+        margin: 5px;
+        
+        font-family: 'Nunito', sans-serif; 
+        font-size: 30px;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      p {
+
+        background-color: bisque;
+        padding: 10px;
+        margin: 0px;
+      }
+
+      img {
+
+        width: 150px;
+        height: 350px;
+        object-fit: cover;
+        margin: 0px;
+      }
+
+      .divResult {
+
+        width: 650px;
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .imgResult {
+        width: 90%;
+        object-fit: contain;
+      }
+
+      .butAIChoose {
+
+        width: 637px;
+      }
+
+      .divPlayer,
+      .divAI {
+
+        background-color: white;
+        display: grid;
+        grid-template-columns: 150px 150px 150px;
+        display: inline-block;
+        padding: 5px 5px 0px 5px;
+        position: fixed;
+      }
+
+      .divAI {
+        left: 500px;
+      }
+
+      .divPlayerScissors:active,
+      .divPlayerRock:active,
+      .divPlayerPaper:active {
+
+        background-color: rgba(0, 200, 0, 0.75);
+      }
+
+      .divPlayerScissors,
+      .divPlayerRock,
+      .divPlayerPaper {
+
+        padding: 5px 5px 0px 5px;
+      }
+    </style>
+  </head>
+  <!-------------------------------------------------------->
+  <body style="font-family: 'Nunito', sans-serif; font-size: 30px;">
+  
+    <!--CAPTION--------------------------------------------->
+    <p>Schere - Stein - Papier</p>
+    <p class="pPoints">----- 0 Punkte -----</p>
+    
+    <!--INIT------------------------------------------------>
+    <script>
+      let vMyChoisse = '';
+      let vComputerMove = Math.random();
+      let vAIChoose = '';
+      let vResult = '';
+      let vScissors = 'Scissors';
+      let vRock = 'Rock';
+      let vPaper = 'Paper';
+      let vWin = 'Win';
+      let vLose = 'Lose';
+      let vTie = 'Tie';
+
+      let oPoints = {
+        vWin: 0,
+        vLose: 0,
+        vTie: 0,
+        vPoints: 0
+      }
+
+      oPoints = JSON.parse( localStorage.getItem("lSoPoints")) || {
+
+        vWin: 0,
+        vLose: 0,
+        vTie: 0,
+        vPoints: 0
+      }
+    </script>
+
+    <!--BUTTONS----------------------------------------------->
+    <button onclick="vMyChoisse=vRock; fun_AIChoose();">
+      <img src="/images/jpgRock.jpg">
+    </button>
+    <!-------------------------------------------------------->
+    <button onclick="vMyChoisse=vPaper; fun_AIChoose();">
+      <img src="/images/jpgPaper.jpg">
+    </button>
+    <!--------------------------------------------------------> 
+    <button onclick="vMyChoisse=vScissors; fun_AIChoose();">
+      <img src="/images/jpgScissors.jpg">
+    </button>
+    <!--------------------------------------------------------> 
+    <div class="divResult">
+    </div>
+    <!--------------------------------------------------------> 
+    <button class="butAIChoose" onclick="vMyChoisse=vScissors; fun_AIChoose();"></button>
+  <!-------------------------------------------------------->
+      <script>
+        // Funktion - Punkte löschen //
+        function fun_OverwritePoints(v$_Win, v$_Lose, v$_Tie, v$_Points) {
+
+          oPoints.vWin = v$_Win;
+          oPoints.vLose = v$_Lose;
+          oPoints.vTie = v$_Tie;
+          oPoints.vPoints = v$_Points;
+
+          // AI Wählt...
+          if (vAIChoose === vPaper) {
+
+            document.querySelector('.butAIChoose').innerHTML = '<img src="/images/jpgPaper.jpg">';
+          } else if (vAIChoose === vScissors) {
+
+            document.querySelector('.butAIChoose').innerHTML = '<img src="/images/jpgScissors.jpg">';
+          } else {
+
+            document.querySelector('.butAIChoose').innerHTML = '<img src="/images/jpgRock.jpg">';
+          }
+
+          document.querySelector('.pPoints').innerHTML = `----- ${oPoints.vPoints} Punkte -----`;
+
+          if (vResult === vWin) {
+
+            document.querySelector('.divResult').innerHTML = '<img class="imgResult" src="/images/pngWin.png">';
+
+          } else if (vResult === vLose) {
+
+            document.querySelector('.divResult').innerHTML = '<img class="imgResult" src="/images/pngLose.png">';
+
+          } else {
+
+            document.querySelector('.divResult').innerHTML = '<img class="imgResult" src="/images/pngTie.png">';
+          }
+        }
+        // Funktion - Computer wählt aus //
+        function fun_AIChoose() {
+        
+          vComputerMove = Math.random();
+
+          if (vComputerMove >= 0 && vComputerMove < 1 / 3) {
+
+            vAIChoose = vScissors;
+          } else if (vComputerMove >= 1 / 3 && vComputerMove < 2 / 3) {
+
+            vAIChoose = vRock;
+          } else {
+
+            vAIChoose = vPaper;
+          }
+
+          if (vAIChoose === vMyChoisse) {
+
+            vResult = vTie
+            fun_OverwritePoints(oPoints.vWin, oPoints.vLose, oPoints.vTie+=1, oPoints.vPoints)
+          } else if (vAIChoose === vScissors && vMyChoisse === vRock) {
+
+            vResult = vWin;
+            fun_OverwritePoints(oPoints.vWin+=1, oPoints.vLose, oPoints.vTie, oPoints.vPoints+=5)
+          } else if (vAIChoose === vScissors && vMyChoisse === vPaper) {
+
+            vResult = vLose;
+            fun_OverwritePoints(oPoints.vWin, oPoints.vLose+=1, oPoints.vTie, oPoints.vPoints-=1)
+          } else if (vAIChoose === vRock && vMyChoisse === vScissors) {
+            
+            vResult = vLose;
+            fun_OverwritePoints(oPoints.vWin, oPoints.vLose+=1, oPoints.vTie, oPoints.vPoints-=1)
+          } else if (vAIChoose === vRock && vMyChoisse === vPaper) {
+            
+            vResult = vWin;
+            fun_OverwritePoints(oPoints.vWin+=1, oPoints.vLose, oPoints.vTie, oPoints.vPoints+=5)
+          }else if (vAIChoose === vPaper && vMyChoisse === vRock) {
+            
+            vResult = vLose;
+            fun_OverwritePoints(oPoints.vWin, oPoints.vLose+=1, oPoints.vTie, oPoints.vPoints-=1)
+          } else if (vAIChoose === vPaper && vMyChoisse === vScissors) {
+            
+            vResult = vWin;
+            fun_OverwritePoints(oPoints.vWin++, oPoints.vLose, oPoints.vTie, oPoints.vPoints+=5)
+          }
+        }
+      </script>
+  <!-------------------------------------------------------->
+  </body>
+</html>
