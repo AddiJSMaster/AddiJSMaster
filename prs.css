@@ -65,14 +65,14 @@ button {
 .parTitle {
 
   margin: 0px;
+  padding: 0px;
+  padding-bottom: 0;
   padding-top: 15px;
   padding-left: 70px;
   font-family: 'Kaushan Script', cursive;
   font-size: 32px;
   background-color: rgb(232, 132, 32);
   height: 70px;
-  padding: 0px;
-  padding-bottom: 0;
   font-family: 'Kaushan Script', cursive;
 }
 
