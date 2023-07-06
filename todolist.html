@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>Addi's ToDoList</title>
+    <link rel="stylesheet" href="todolist.css">
+    <link rel="stylesheet" href="todolistelement.css">
+    <script src="todolist.js"></script>
+  </head>
+  <body>
+    <img class="imgLogoBackground" src="images/svgLogo.svg">
+
+    <header class="headTitle">
+      <img class="imgLogo" src="images/svgLogo.svg">
+      <p class="parTitle">Addi's ToDo List</p>
+    </header>
+
+    <div class="divPage">
+      <input class="inpToDoText" placeholder="Text eingeben">
+      <input class="inpDate" type="date">
+      <button class="butAdd" onclick="funAddElement(arrToDoList, funGetName(), funGetDate())">Add</button> 
+
+      <p style="padding-left: 25px;">Liste...</p>
+      <div class="divList"></div>
+      <script> funListElements(arrToDoList); </script>
+    </div>
+  </body>
+</html>

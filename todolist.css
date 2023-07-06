@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* ALL ELEMENTS */
+body {
+  margin: 0px;
+  color: rgb(232, 232, 232);
+  background-color: rgb(32, 32, 32);
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* DIV ELEMENTS */
+.headTitle {
+
+  font-size: 23px;
+  height: 70px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  z-index: 200;
+  color: rgb(32, 32, 32);
+  background-color: rgb(232, 132, 32);
+  box-shadow: 0px 2px 3px rgba(223, 223, 232, 0.5);
+  font-weight: bold;
+  position: fixed;
+}
+
+.divPage {
+  margin-top: 20px;
+}
+
+.divList {
+
+  padding-left: 50px;
+}
+
+/* IMAGE ELEMENTS */
+.imgLogoBackground {
+
+  position: absolute;
+  z-index: -100;
+}
+
+.imgLogo {
+
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin: 5px;
+  margin-top: 10px;
+  position: fixed;
+}
+
+/* PARAGRAPH ELEMENTS */
+.parTitle{
+  margin: 0px;
+  padding-top: 15px;
+  padding-left: 70px;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 32px;
+}
+
+/* INPUT ELEMENTS */
+.inpToDoText{
+  
+  height: 30px;
+  width: 500px;
+  border: 0px solid white;
+  border-radius: 20px;
+  margin-top: 80px;
+  margin-left: 20px;
+  padding: 5px;
+  padding-left: 20px;
+}
+
+.inpDate {
+
+  height: 30px;
+  width: 500px;
+  border: 0px solid white;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 5px;
+  padding-left: 20px;
+}
+
+/* BUTTON ELEMENTS */
+.butAdd{
+
+  padding: 0px;
+  margin: 0px;
+  border: 0px solid white;
+  border-radius: 20px;
+  background-color: lightgreen;
+  font-weight: bold;
+  height: 40px;
+  width: 50px;
+}

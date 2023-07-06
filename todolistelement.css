@@ -1,0 +1,38 @@
+
+.divListElement {
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  width: 70%;
+  background-color: rgb(50, 50, 50);
+  border-radius: 20px;
+  padding: 0px;
+  margin: 10px;
+}
+
+.listElementName {
+
+  padding: 0px;
+  padding-left: 20px;
+  margin: 0px;
+}
+
+.listElementDate {
+  padding: 0px;
+  margin: 0px;
+}
+
+.listElementDeleteButton {
+
+  padding: 0px;
+  margin: 0px;
+  border: 0px solid white;
+  border-radius: 10px;
+  background-color: brown;
+  font-weight: bold;
+}
+
+.listElementDeleteButton:hover {
+
+  border: 2px solid lightcoral;
+}
