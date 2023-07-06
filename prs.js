@@ -9,7 +9,6 @@ let vPaper = 'Paper';
 let vWin = 'Win';
 let vLose = 'Lose';
 let vTie = 'Tie';
-
 let oPoints;
 
 oPoints = {//JSON.parse( localStorage.getItem("lSoPoints")) || {
@@ -34,16 +33,16 @@ function fun_OverwritePoints(v$_Win, v$_Lose, v$_Tie, v$_Points) {
   // AI Wählt...
   if (vAIChoose === vPaper) {
 
-    elmButton.innerHTML = '<img src="images/jpgPaper.jpg">';
+    elmButton.innerHTML = '<img class="imgChoice" src="images/jpgPaper.jpg">';
   } else if (vAIChoose === vScissors) {
 
-    elmButton.innerHTML = '<img src="images/jpgScissors.jpg">';
+    elmButton.innerHTML = '<img class="imgChoice" src="images/jpgScissors.jpg">';
   } else {
 
-    elmButton.innerHTML = '<img src="images/jpgRock.jpg">';
+    elmButton.innerHTML = '<img class="imgChoice" src="images/jpgRock.jpg">';
   }
 
-  document.querySelector('.pPoints').innerHTML = `----- ${oPoints.vPoints} Punkte -----`;
+  document.querySelector('.parPoints').innerHTML = `${oPoints.vPoints} Punkte / ${oPoints.vWin} Gewonnen / ${oPoints.vTie} Unentschieden / ${oPoints.vLose} Verloren`;
 
   if (vResult === vWin) {
 
