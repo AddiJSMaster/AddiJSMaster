@@ -97,5 +97,11 @@ body {
   background-color: lightgreen;
   font-weight: bold;
   height: 40px;
-  width: 50px;
+  width: 75px;
+}
+
+.butAdd:hover {
+
+  border: 2px solid lightgreen;
+  background-color: green;
 }
