@@ -1,30 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <meta charset="UTF-8">
     <title>Schere - Stein - Papier</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="prs.css">
     <script src="prs.js"></script>
   </head>
   <body>
     <!--HEADER------------------------------------------------> 
-    <p>Schere - Stein - Papier</p>
-    <p class="pPoints">----- 0 Punkte -----<p>
+    <header class="divTitle">
+      <img class="imgLogoBackground" src="images/svgLogo.svg">
+      <img class="imgLogo" src="images/svgLogo.svg">
+      <p class="parTitle">Schere - Stein - Papier</p>
+      <p class="parPoints"> 0 Punkte / 0 Gewonnen / 0 Unentschieden / 0 Verloren<p> 
+    </header>
     <!--BUTTONS----------------------------------------------->
-    <button onclick="vMyChoisse=vRock; fun_AIChoose();">
-      <img src="images/jpgRock.jpg">
-    </button>
-    <button onclick="vMyChoisse=vPaper; fun_AIChoose();">
-      <img src="images/jpgPaper.jpg">
-    </button>
-    <button onclick="vMyChoisse=vScissors; fun_AIChoose();">
-      <img src="images/jpgScissors.jpg">
-    </button>
-    <!--DIV---------------------------------------------------> 
-    <div class="divResult">
+    <div class="divBackground">
+      <button onclick="vMyChoisse=vRock; fun_AIChoose();">
+        <img class="imgChoice" src="images/jpgRock.jpg">
+      </button>
+      <button onclick="vMyChoisse=vPaper; fun_AIChoose();">
+        <img class="imgChoice" src="images/jpgPaper.jpg">
+      </button>
+      <button onclick="vMyChoisse=vScissors; fun_AIChoose();">
+        <img class="imgChoice" src="images/jpgScissors.jpg">
+      </button>  
+      <!--DIV---------------------------------------------------> 
+      <div class="divResult">
+      </div>
+      <!--AIBUTTON----------------------------------------------> 
+      <button class="butAIChoose"></button>
     </div>
-    <!--AIBUTTON----------------------------------------------> 
-    <button class="butAIChoose"></button>
   </body>
 </html>
