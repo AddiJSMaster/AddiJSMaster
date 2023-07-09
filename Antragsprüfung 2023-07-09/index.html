@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <!-- HEAD -->
+  <head>
+    <meta charset="UTF-8">
+    <title>Antragsprüfung</title>
+    <script src="script_application.js"></script>
+  </head>
+
+  <!-- STYLE -->
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+    input { height: 30px; border: 1px solid grey; border-radius: 5px; margin-bottom: 10px; padding-left: 10px; }
+
+    .navButton        { height: 30px; width: 90%; margin-bottom: 10px; box-shadow: 0px 2px 2px rgba(23, 23, 23, 0.25); background-color: lightgray; border: 1px solid grey; }
+    .navButton:hover  { background-color: rgb(140 220, 250); border: 1px solid rgb(40, 160, 240); }
+    .navButton:active { box-shadow: 0px 0px 0px rgba(23, 23, 23, 0.25); }
+
+    @media screen and (max-width: 1425px) {
+
+      .divGrid  { position: fixed; left: 150px; top: 170px; right: 0px; bottom: 0px; color: rgb(32, 32, 32); background-color: lightgrey; border-radius: 0px; }
+      .divTable { display: grid; width: 100%; height: 732px; left: 180px; top: 160px; right: 20px; bottom: 10px; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr; margin-top: 10px; overflow: auto; }
+    }
+
+    @media screen and (min-width: 1425px) {
+
+      .divGrid  { position: fixed; left: 150px; top: 126px; right: 0px; bottom: 0px; color: rgb(32, 32, 32); background-color: lightgrey; border-radius: 0px; }
+      .divTable { display: grid; width: 100%; height: 785px; left: 180px; top: 160px; right: 20px; bottom: 10px; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr; margin-top: 10px; overflow: auto; }
+    }
+  </style>
+
+  <!-- BODY -->
+  <body style="margin: 0; color: rgb(232, 232, 232); background-color: rgb(32, 32, 32); font-family: 'Open Sans', sans-serif;">
+
+    <!-- BACKGROUND IMAGE -->
+    <!-- <img src="svgLogo.svg" style="position: fixed; top: 80px; left: 170px; z-index: -2350;"> -->
+
+    <!-- HEADER -->
+    <header style="font-size: 23px; border: 0px; border-bottom: 2px solid rgb(32, 32, 32); height: 70px; left: 0px; right: 0px; top: 0px; z-index: 2350; font-weight: bold; position: fixed; color: rgb(32, 32, 32); background-color: rgb(223, 223, 223);">
+
+      <img src="svgLogo.svg" onmousedown="funReset()" style="height: 50px; margin: 5px; margin-top: 10px; padding: 5px; width: 50px; position: fixed;">
+      <p style="font-size: 32px; margin: 0px; padding-left: 70px; padding-top: 10px; font-family: 'Kaushan Script', cursive;">Antragsprüfung</p>
+    </header>
+
+    <!-- NAV -->
+    <nav id="id_NavMenu" style="border: 0px; border-right: 2px solid rgb(32, 32, 32); bottom: 0px; font-size: 15px; left: 0px; padding-top: 10px; top: 70px; width: 150px; z-index: 2350; align-items: center; display: flex; flex-flow: column nowrap; font-weight: bold; position: fixed; color: rgb(32, 32, 32); background-color: rgb(223, 223, 223);">
+                                
+      <button class="navButton" onclick="funAddApplication()">Antrag hinzufügen</button>
+      <button class="navButton">Antrag schließen</button>
+    </nav>
+
+    <!-- PAGE -->
+    <div id="id_DivPage" style="display: contents; margin-top: 80px; margin-left: 160px; display: grid; grid-template-rows: 1fr 2fr;">
+
+      <!-- APPLICATION DATA INPUT -->
+      <div id="id_DivApplication" style="position: fixed; top: 70px; left: 150px; right: 0px; border-bottom: 2px solid rgb(32, 32, 32); padding-left: 10px; color: rgb(32, 32, 32); background-color: rgb(223, 223, 223);">
+
+        <div style="height: 10px;"></div>
+        <input id="id_InputApplicationNumber" type="text" placeholder="Antragsnummer" style="width: 105px;">
+        <input id="id_CentralApplication" type="text" placeholder="Zentralantrag" style="width: 105px;">
+        <input id="id_InputApplicationApplicantName" type="text" placeholder="Name" style="width: 200px;">
+        <input id="id_InputApplicationApplicantStreet" type="text" placeholder="Straße" style="width: 200px;">
+        <input id="id_InputApplicationApplicantResidence" type="text" placeholder="Wohnort" style="width: 200px;">
+        <input id="id_inputApplicationApplicantIBAN" type="text" placeholder="IBAN" style="width: 300px;">
+      </div>
+
+
+
+      <!-- GRID -->
+      <div class="divGrid" id="id_DivGrid">
+        <!-- APPLICATION GRID TITLE -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;">
+          <p style="text-align: center;">Nr.</p>
+          <p style="text-align: center;">ZA</p>
+          <p style="text-align: center;">Name</p>
+          <p style="text-align: center;">Staße</p>
+          <p style="text-align: center;">Wohnort</p>
+          <p style="text-align: center;">IBAN</p>
+        </div>
+      
+        <!-- APPLICATION GRID -->
+        <div style="display: contents; width: 100%; height: 100%;">
+          <div class="divTable" id="id_divApplicationGrid">
+          </div>  
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- SCRIPT -->
+    <script>
+
+      if (vGlo$InitState === 0) {
+
+        funINITAplications();
+      }
+
+      funLoadApplications();
+    </script>
+  </body>
+</html>
