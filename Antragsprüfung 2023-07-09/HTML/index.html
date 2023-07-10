@@ -20,12 +20,18 @@
 
 	button {
 
-		background-color: rgb(223, 223, 223);
+		background-color: lightgrey;
 		border: 1px solid black;
 		border-radius: 5px;
 		margin-left: 5px;
 		margin-right: 5px;
 		height: 30px;
+	}
+
+	p {
+	
+		padding-left: 10px;
+		padding-top: 0px;
 	}
   </style>
 
@@ -40,42 +46,27 @@
     </header>
 
 	<div style="display: content; ">
+
+		<!-- PAGE STEPS -->
+		<div id='divStep_1' style="display: inline-block; margin-top: 80px; margin-left: 10px; margin-right: 10px; margin-bottom: 0px; border-radius: 5px; height: 90px; background-color: rgb(223, 223, 223); width: 938px;">
+
+			<p>Antragsart...
+
+				<div style="display: grid; grid-template-columns: 1fr 1fr 1fr">
+					<button id="butApplication0" onmousedown="funButtonsApplicationClicked(0)">Identitätsprüfung erneut anfordern vorhanden?</button>
+					<button id="butApplication1" onmousedown="funButtonsApplicationClicked(1)">Zentralantragstellung</button>
+					<button id="butApplication2" onmousedown="funButtonsApplicationClicked(2)">Firmenaktennummer</button>
+				</div>
+			</p>
+	    	</div>
+
+		<div id='divStep_2' style="display: inline-block; margin-top: 5px; margin-left: 10px; margin-right: 10px; border-radius: 5px; height: 90px; background-color: rgb(32, 32, 32); width: 938px;">
+
+		</div>
 	</div>
-    <!-- PAGE STEPS -->
-    <div id='divStep_1' style="margin-top: 80px; margin-left: 10px; margin-right: 10px; border-radius: 5px; height: 70px; background-color: rgb(223, 223, 223); width: 938px;">
-
-	<p style="padding-left: 10px; padding-top: 5px;">Antragsart...
-
-		<div style="display: grid; grid-template-columns: 1fr 1fr 1fr">
-			<button onmousedown="funButtonsApplicationClicked(0)">Identitätsprüfung erneut anfordern vorhanden?</button>
-			<button onmousedown="funButtonsApplicationClicked(1)">Zentralantragstellung</button>
-			<button onmousedown="funButtonsApplicationClicked(2)">Firmenaktennummer</button>
-		</div>
-	</p>
-    </div>
-
-	<script>
-		console.log(document.getElementById('divStep_1').clientWidth);
-	</script>
-
-    <div id='divStep_2' style="margin-top: 10px; margin-left: 10px; margin-right: 10px; border-radius: 5px; height: 70px; background-color: rgb(223, 223, 223); width: 938px;">
-
-	<p style="padding-left: 10px; padding-top: 5px;">Status der Person...
-
-		<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr">
-			<button id="butPerson0" onmousedown="funButtonsPersonClicked(0)">Legitimiert</button>
-			<button id="butPerson1" onmousedown="funButtonsPersonClicked(1)">Dokumente unvollständig</button>
-			<button id="butPerson2" onmousedown="funButtonsPersonClicked(2)">Daten stimmen nicht überein</button>
-			<button id="butPerson3" onmousedown="funButtonsPersonClicked(3)">Reupload fehlgeschlagen</button>
-		</div>
-	</p>
-    </div>
-
-
 
     <!-- SCRIPT -->
     <script> funInit(); </script>
   </body>
 </html>
-
 
