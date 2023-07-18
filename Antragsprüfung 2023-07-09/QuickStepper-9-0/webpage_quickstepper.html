@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <!--// HEAD \\-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quick Stepper 9.0</title>
+
+    <!-- <link rel="stylesheet" href="styles/style_###.css" /> -->
+    <link rel="stylesheet" href="styles/style_body.css" />
+    <link rel="stylesheet" href="styles/style_button.css" />
+    <link rel="stylesheet" href="styles/style_div.css" />
+    <link rel="stylesheet" href="styles/style_fonts.css" />
+    <link rel="stylesheet" href="styles/style_input.css" />
+    <link rel="stylesheet" href="styles/style_label.css" />
+    <link rel="stylesheet" href="styles/style_textarea.css" />
+
+    <!-- <script src="scripts/script_###.js"></script> -->
+    <script src="scripts/script_berechnung.js"></script>
+    <script src="scripts/script_buttons.js"></script>
+    <script src="scripts/script_input.js"></script>
+    <script src="scripts/script_main.js"></script>
+    <script src="scripts/script_textbausteine.js"></script>
+  </head>
+
+
+
+  <!--// BODY \\-->
+  <body>
+    <!-- DIV GRID -->
+    <div>
+      <div class="claDivGrid">
+
+        <!-- LEFT -->
+        <div>
+          <div class="claDivTitle">Quick Stepper 9.0          <button onmousedown="funRestart()" style="width: 100px">Restart</button></div>
+          <div class="claDivRow">Eigenerklärung               <button id="idButtonEigenerklärung" onmousedown="funButtonClicked('idButtonEigenerklärung');">OK</button></div>
+          <div class="claDivRow">Adresse in Teilungserklärung <button id="idButtonAdresseInTeilungserklärung" onmousedown="funButtonClicked('idButtonAdresseInTeilungserklärung');">OK</button></div>
+          <div class="claDivRow">Straße                       <input style="width: 250px" id="idInputStraße"></div>
+          <div class="claDivRow">Ort                          <input style="width: 250px" id="idInputOrt"></div>
+  
+          <div class="claDivRow">Betrag                       <button id="idButtonBetrag" onmousedown="funButtonClicked('idButtonBetrag');">OK</button></div>
+          <div class="claDivRow">Menge                        <button id="idButtonMenge" onmousedown="funButtonClicked('idButtonMenge');">OK</button></div>
+          <div class="claDivRow">Erstattung                   <input id="idInputErstattungsbetrag"></div>
+  
+          <div class="claDivRow">IBAN vorhanden               <button id="idButtonIBAN" onmousedown="funButtonClicked('idButtonIBAN');">OK</button></div>
+          <div class="claDivRow">Summe                        <button style="display: none;" id="idButtonIBANSumme" onmousedown="funButtonClicked('idButtonIBANSumme');">OK</button></div>
+  
+          <div class="claDivRow">Rechnungsbetrag              <button id="idButtonRechnungsBetrag" onmousedown="funButtonClicked('idButtonRechnungsBetrag');">OK</button></div>
+          <div class="claDivRow">Summe                        <button style="display: none;" id="idButtonRechnungsBetragSumme" onmousedown="funButtonClicked('idButtonRechnungsBetragSumme');">OK</button></div>
+          <div class="claDivRow">Rechnungsmenge               <button id="idButtonRechnungsMenge" onmousedown="funButtonClicked('idButtonRechnungsMenge');">OK</button></div>
+          <div class="claDivRow">Summe                        <button style="display: none;" id="idButtonRechnungsMengeSumme" onmousedown="funButtonClicked('idButtonRechnungsMengeSumme');">OK</button></div>
+  
+          <div class="claDivRow">01.01.2022 - 01.12.2022      <button style="display: none;" id="idButtonImZeitrum" onmousedown="funButtonClicked('idButtonImZeitrum');">OK</button></div>
+          <div class="claDivRow">02.12.2022 - 31.03.2023      <button style="display: none;" id="idButtonAußerhalb" onmousedown="funButtonClicked('idButtonAußerhalb');">OK</button></div>
+          <div class="claDivRow">Bestellbestätigung           <button style="display: none;" id="idButtonBestellbestätigung" onmousedown="funButtonClicked('idButtonBestellbestätigung');">OK</button></div>
+        </div>
+  
+  
+  
+        <!-- RIGHT -->
+        <div class="claDivGridBills" style="padding-left: 2px;">
+  
+          <!-- RECHNUNGEN TITEL -->
+          <div class="claDivTitleBill" style="margin-top: 0px;"><button id="idButtonRechnung_1" onmousedown="funButtonClicked('idButtonRechnung_1');" style="width: 100px">Normal</button></div>
+          <div class="claDivTitleBill" style="margin-top: 0px;"><button id="idButtonRechnung_2" onmousedown="funButtonClicked('idButtonRechnung_2');" style="width: 100px">ZA</button></div>
+          <div class="claDivTitleBill" style="margin-top: 0px;"><button id="idButtonRechnung_3" onmousedown="funButtonClicked('idButtonRechnung_3');" style="width: 100px">WEG</button></div>
+          <div class="claDivTitleBill" style="margin-top: 0px;"><button id="idButtonRechnung_4" onmousedown="funButtonClicked('idButtonRechnung_4');" style="width: 100px"></button></div>
+          <div class="claDivTitleBill" style="margin-top: 0px;"><button id="idButtonRechnung_5" onmousedown="funButtonClicked('idButtonRechnung_5');" style="width: 100px"></button></div>
+  
+          <!-- LEERLEISTE -->
+          <div class="claDivRow"></div><div class="claDivRow"></div><div class="claDivRow"></div><div class="claDivRow"></div><div class="claDivRow"></div>
+  
+          <!-- KUNDEN NUMMER -->
+          <div class="claDivTitleBill"><input id="idInputKundenNummer_1" style="width: 90px;" placeholder="K.Nr."></div>
+          <div class="claDivTitleBill"><input id="idInputKundenNummer_2" style="width: 90px;" placeholder="K.Nr."></div>
+          <div class="claDivTitleBill"><input id="idInputKundenNummer_3" style="width: 90px;" placeholder="K.Nr."></div>
+          <div class="claDivTitleBill"><input id="idInputKundenNummer_4" style="width: 90px;" placeholder="K.Nr."></div>
+          <div class="claDivTitleBill"><input id="idInputKundenNummer_5" style="width: 90px;" placeholder="K.Nr."></div>
+  
+          <!-- RECHNUNGS NUMMER -->
+          <div class="claDivTitleBill"><input id="idInputRechnungNummer_1" style="width: 90px;" placeholder="R.Nr."></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungNummer_2" style="width: 90px;" placeholder="R.Nr."></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungNummer_3" style="width: 90px;" placeholder="R.Nr."></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungNummer_4" style="width: 90px;" placeholder="R.Nr."></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungNummer_5" style="width: 90px;" placeholder="R.Nr."></div>
+          
+          <!-- ADRESSE PRÜFEN -->
+          <div class="claDivTitleBill"><button id="idButtonAdresse_1" onmousedown="funButtonClicked('idButtonAdresse_1');">OK</button></div>
+          <div class="claDivTitleBill"><button id="idButtonAdresse_2" onmousedown="funButtonClicked('idButtonAdresse_2');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonAdresse_3" onmousedown="funButtonClicked('idButtonAdresse_3');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonAdresse_4" onmousedown="funButtonClicked('idButtonAdresse_4');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonAdresse_5" onmousedown="funButtonClicked('idButtonAdresse_5');">Ok</button></div>
+  
+          <!-- ANTRAGSPREIS PRÜFEN -->
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsBetrag_1" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsBetrag_2" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsBetrag_3" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsBetrag_4" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsBetrag_5" style="width: 90px;"></div>
+  
+          <!-- ANTRAGSMENGE PRÜFEN -->
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsMenge_1" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsMenge_2" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsMenge_3" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsMenge_4" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputAntragsRechnungsMenge_5" style="width: 90px;"></div>
+  
+          <!-- ERSTATTUNGSBETRAG -->
+          <div class="claDivTitleBill"><input id="idInputErstattungsBetrag_1" onkeyup="funInputClicked('idInputErstattungsBetrag_1');" style="width: 90px;"></div><div class="claDivTitleBill"><input id="idInputErstattungsBetrag_2" style="width: 90px;"></div><div class="claDivTitleBill"></div><div class="claDivTitleBill"></div><div class="claDivTitleBill"></div>
+  
+          <!-- ZAHLUNGSNACHWEIS PRÜFEN -->
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetrag_1" onkeyup="funInputClicked('idInputZahlungsBetrag_1');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetrag_2" onkeyup="funInputClicked('idInputZahlungsBetrag_2');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetrag_3" onkeyup="funInputClicked('idInputZahlungsBetrag_3');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetrag_4" onkeyup="funInputClicked('idInputZahlungsBetrag_4');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetrag_5" onkeyup="funInputClicked('idInputZahlungsBetrag_5');" style="width: 90px;"></div>
+  
+          <!-- ZAHLUNGSNACHWEIS SUMMEN PRÜFEN -->
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetragSumme_1" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetragSumme_2" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetragSumme_3" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetragSumme_4" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputZahlungsBetragSumme_5" style="width: 90px;"></div>
+          
+          <!-- RECHNUNGSBETRAG PRÜFEN -->
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetrag_1" onkeyup="funInputClicked('idInputRechnungsBetrag_1');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetrag_2" onkeyup="funInputClicked('idInputRechnungsBetrag_2');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetrag_3" onkeyup="funInputClicked('idInputRechnungsBetrag_3');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetrag_4" onkeyup="funInputClicked('idInputRechnungsBetrag_4');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetrag_5" onkeyup="funInputClicked('idInputRechnungsBetrag_5');" style="width: 90px;"></div>
+  
+          <!-- SUMME RECHNUNGSBETRAG -->
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetragSumme_1" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetragSumme_2" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetragSumme_3" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetragSumme_4" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsBetragSumme_5" style="width: 90px;"></div>
+  
+          <!-- RECHNUNGSMENGE PRÜFEN -->
+          <div class="claDivTitleBill"><input id="idInputRechnungsMenge_1" onkeyup="funInputClicked('idInputRechnungsMenge_1');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsMenge_2" onkeyup="funInputClicked('idInputRechnungsMenge_2');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsMenge_3" onkeyup="funInputClicked('idInputRechnungsMenge_3');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsMenge_4" onkeyup="funInputClicked('idInputRechnungsMenge_4');" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsMenge_5" onkeyup="funInputClicked('idInputRechnungsMenge_5');" style="width: 90px;"></div>
+  
+          <!-- SUMME RECHNUNGSMENGE -->
+          <div class="claDivTitleBill"><input id="idInputRechnungsMengeSumme_1" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsMengeSumme_2" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsMengeSumme_3" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsMengeSumme_4" style="width: 90px;"></div>
+          <div class="claDivTitleBill"><input id="idInputRechnungsMengeSumme_5" style="width: 90px;"></div>
+          
+          <!-- 01.01.2022 - 01.12.2022 -->
+          <div class="claDivTitleBill"><button id="idButtonImZeitraum_1" onmousedown="funButtonClicked('idButtonImZeitraum_1');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonImZeitraum_2" onmousedown="funButtonClicked('idButtonImZeitraum_2');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonImZeitraum_3" onmousedown="funButtonClicked('idButtonImZeitraum_3');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonImZeitraum_4" onmousedown="funButtonClicked('idButtonImZeitraum_4');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonImZeitraum_5" onmousedown="funButtonClicked('idButtonImZeitraum_5');">Ok</button></div>
+  
+          <!-- 02.12.2022 - 31.03.2023 -->
+          <div class="claDivTitleBill"><button id="idButtonAußerhalb_1" onmousedown="funButtonClicked('idButtonAußerhalb_1');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonAußerhalb_2" onmousedown="funButtonClicked('idButtonAußerhalb_2');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonAußerhalb_3" onmousedown="funButtonClicked('idButtonAußerhalb_3');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonAußerhalb_4" onmousedown="funButtonClicked('idButtonAußerhalb_4');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonAußerhalb_5" onmousedown="funButtonClicked('idButtonAußerhalb_5');">Ok</button></div>
+  
+          <!-- BESTELLBESTÄTIGUNG -->
+          <div class="claDivTitleBill"><button id="idButtonBestellbestätigung_1" onmousedown="funButtonClicked('idButtonBestellbestätigung_1');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonBestellbestätigung_2" onmousedown="funButtonClicked('idButtonBestellbestätigung_2');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonBestellbestätigung_3" onmousedown="funButtonClicked('idButtonBestellbestätigung_3');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonBestellbestätigung_4" onmousedown="funButtonClicked('idButtonBestellbestätigung_4');">Ok</button></div>
+          <div class="claDivTitleBill"><button id="idButtonBestellbestätigung_5" onmousedown="funButtonClicked('idButtonBestellbestätigung_5');">Ok</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IDENTITÄTSPRÜFUNG ERNEUT ANFORDERN -->
+    <p></p>
+
+    <div class="claDivResultTitle">Frage 1 - Identitätsprüfung erneut anfordern</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage1"></textarea></div>
+
+    <p></p>
+
+    <div class="claDivResultTitle">Frage 3 - Vertiefte Prüfung erfolgreich durchgeführt</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage3"></textarea></div>
+
+    <p></p>
+
+    <div class="claDivResultTitle">Frage 4 - Rechnung fehlt</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage4_1"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 4 - Zahlungsnachweis fehlt</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage4_2"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 4 - Eigenerklärung unvollständig</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage4_3"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 4 - Adresse in der Teilungserklärung stiimmt nicht überein</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage4_4"></textarea></div>
+
+    <p></p>
+
+    <div class="claDivResultTitle">Frage 5 - Rechnungbetrag weicht stark ab oder Rechnung fehlt</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage5_1"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 5 - Rechnungsmenge weicht stark ab oder Rechnung fehlt</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage5_2"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 5 - Starke Abweichungen zum Zahlungsnachweis oder Zahlungsnachweis nicht vorhanden</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage5_3"></textarea></div>
+
+
+    <div class="claDivResultTitle">Frage 5 - Bemerkung - Rechnungsbetrag wurde anhand der Rechnung korrigiert</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage5_4"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 5 - Bemerkung - Menge wurde anhand der Rechnung korrigiert</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage5_5"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 5 - Bemerkung - Betrag wurde durch Zahlungsnachweis korrigiert</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage5_6"></textarea></div>
+
+
+    <div class="claDivResultTitle">Frage 5 - Mindesterstattungsbetrag nicht erreicht</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage5_7"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 5 - Ablehnung da Mindesterstattungsbetrag nicht erreicht</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage5_8"></textarea></div>
+
+    <p></p>
+
+    <div class="claDivResultTitle">Frage 6 - IBAN nicht verifiziert</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage6"></textarea></div>
+
+    <p></p>
+
+    <div class="claDivResultTitle">Frage 8 - Bestellbestätigung mindestens einer Rechnung fehlt</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage8_1"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 8 - Mindestens Eine Rechnung nicht im Erstattungszeitraum</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage8_2"></textarea></div>
+
+    <div class="claDivResultTitle">Frage 8 - Lieferdatum mindestens einer Rechnung nicht im Erstattungszeitraum</div>
+    <div class="claDivResultRow"><textarea id="idTextAreaFrage8_3"></textarea></div>
+
+    <p></p>
+    
+    <script>funRestart();</script>
+  </body>
+</html>

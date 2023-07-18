@@ -1,0 +1,54 @@
+
+textarea {
+
+  border: 1px solid black;
+  background-color: whitesmoke;
+  margin-top: 5px;
+  width: 932px;
+  height: 80px;
+  resize: none;
+  display: inline-block;
+}
+
+#idTextAreaFrage1 { height: 80px; }
+
+
+#idTextAreaFrage3 { height: 40px; }
+
+
+#idTextAreaFrage4_1 { height: 20px; }
+
+#idTextAreaFrage4_2 { height: 40px; }
+
+#idTextAreaFrage4_3 { height: 20px; }
+
+#idTextAreaFrage4_4 { height: 20px; }
+
+
+#idTextAreaFrage5_1 { height: 40px;}
+
+#idTextAreaFrage5_2 { height: 40px;}
+
+#idTextAreaFrage5_3 { height: 40px;}
+
+
+#idTextAreaFrage5_4 { height: 20px;}
+
+#idTextAreaFrage5_5 { height: 20px;}
+
+#idTextAreaFrage5_6 { height: 40px;}
+
+
+#idTextAreaFrage5_7 { height: 20px;}
+
+#idTextAreaFrage5_8 { height: 40px;}
+
+
+#idTextAreaFrage6 { height: 20px;}
+
+
+#idTextAreaFrage8_1 { height: 20px;}
+
+#idTextAreaFrage8_2 { height: 20px;}
+
+#idTextAreaFrage8_3 { height: 20px;}
